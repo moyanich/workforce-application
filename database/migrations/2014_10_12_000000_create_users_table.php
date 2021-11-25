@@ -22,6 +22,16 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        // Insert some stuff
+        DB::table('users')->insert([
+            'name' => 'Admin',
+            'email' => 'test@admin.com',
+            'password' => Hash::make('password'),
+
+           // 'password' => bcrypt::make('password'),
+        ]);
+
     }
 
     /**
